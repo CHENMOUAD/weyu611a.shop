@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>プロフェッショナル投資アドバイス | 優良株式投資機会</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #003366 0%, #004080 50%, #0066cc 100%);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Section */
+        .hero-section {
+            background: linear-gradient(135deg, #003366 0%, #004080 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23FFD700" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23FFD700" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="%23FFD700" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            color: #e6f3ff;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-image {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        /* Main Content Sections */
+        .content-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .content-section:nth-child(even) {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #003366;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            border-radius: 2px;
+        }
+
+        .problems-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .problem-item {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,51,102,0.1);
+            border-left: 5px solid #FFD700;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .problem-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,51,102,0.15);
+        }
+
+        .problem-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, #003366, #004080);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin: 50px 0;
+        }
+
+        .service-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,51,102,0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0,51,102,0.15);
+            border-color: #FFD700;
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #003366;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #003366;
+            margin-bottom: 15px;
+        }
+
+        .features-list {
+            margin: 40px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-item {
+            background: linear-gradient(135deg, #003366 0%, #004080 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .feature-icon {
+            width: 30px;
+            height: 30px;
+            background: #FFD700;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        /* CTA Buttons */
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #003366;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 20px 10px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(255, 215, 0, 0.4);
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        /* Floating Bottom Button */
+        .floating-button {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(45deg, #ff4757, #ff3742);
+            color: white;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(255, 71, 87, 0.4);
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 10px 30px rgba(255, 71, 87, 0.4);
+                transform: translateX(-50%) scale(1);
+            }
+            50% {
+                box-shadow: 0 15px 40px rgba(255, 71, 87, 0.6);
+                transform: translateX(-50%) scale(1.05);
+            }
+            100% {
+                box-shadow: 0 10px 30px rgba(255, 71, 87, 0.4);
+                transform: translateX(-50%) scale(1);
+            }
+        }
+
+        /* Risk Disclosure */
+        .risk-section {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 60px 0;
+        }
+
+        .risk-title {
+            color: #FFD700;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .risk-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .risk-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .risk-content li {
+            margin: 10px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .risk-content li::before {
+            content: '•';
+            color: #FFD700;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-links {
+            margin: 20px 0;
+        }
+
+        .footer-links a {
+            color: #FFD700;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+            
+            .floating-button {
+                padding: 15px 30px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">過小評価された投資機会を発見</h1>
+                <p class="hero-subtitle">投資の困境から脱出し、真の価値ある株式投資機会を見つけましょう！株価の低迷に惑わされず、プロフェッショナルな分析で最適な投資判断をサポートします。</p>
+                <div class="hero-image">
+                    <img src="img/1.jpg" alt=" "  >
+                </div>
+                <button class="cta-button" onclick="kay()">専属レポートを取得</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problems Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">こんな問題に直面していませんか？</h2>
+            <div class="problems-list">
+                <div class="problem-item">
+                    <div class="problem-number">1</div>
+                    <h3>専門的分析の不足</h3>
+                    <p>多くの投資家は深い分析を欠いているため、最適な買い時を逃し、盲目的に市場に追従して損失を招いています。</p>
+                </div>
+                <div class="problem-item">
+                    <div class="problem-number">2</div>
+                    <h3>情報過多</h3>
+                    <p>市場情報が複雑で、投資家は真に価値のある株式を選別することが困難で、選択の迷いに陥りやすい状況です。</p>
+                </div>
+                <div class="problem-item">
+                    <div class="problem-number">3</div>
+                    <h3>リスク評価不足</h3>
+                    <p>正確なリスク評価の欠如により投資判断を誤り、資産増加に影響を与える結果となっています。</p>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <button class="cta-button" onclick="kay()">あなた専用のレポートを取得</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">なぜ私たちのサービスを選ぶのか？</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3 class="service-title">プロフェッショナル市場分析</h3>
+                    <p>先進的な市場分析ツールを用いて、株式のファンダメンタルズとテクニカル面を深く評価。財務諸表、業界トレンド、市場センチメントを分析し、潜在的な投資機会を特定します。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎯</div>
+                    <h3 class="service-title">個別化投資戦略</h3>
+                    <p>初心者から経験豊富な投資家まで、あなたの投資目標とリスク許容度に合わせたオーダーメイドの株式推奨を提供。専門家チームが具体的な投資戦略を策定します。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3 class="service-title">リアルタイム市場動向</h3>
+                    <p>推奨株式のパフォーマンスを継続的に追跡し、タイムリーに戦略を調整。定期的な市場分析とレポートで投資判断を最前線に保ちます。</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin: 50px 0;">
+                <button class="cta-button" onclick="kay()">個別化推奨レポートを今すぐ取得</button>
+            </div>
+
+            <div class="hero-image">
+                <img src="img/2.jpg" alt=" "  >
+            </div>
+
+            <div class="features-list">
+                <div class="feature-item">
+                    <div class="feature-icon"></div>
+                    <span><strong>潜在株分析：</strong> 推奨株式の投資価値を深く分析</span>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"></div>
+                    <span><strong>市場展望：</strong> 業界トレンドを予測し、将来の機会を把握</span>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"></div>
+                    <span><strong>専門家アドバイス：</strong> チームの専門指導で効果的な投資計画を策定</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Risk Disclosure -->
+    <section class="risk-section">
+        <div class="container">
+            <div class="risk-content">
+                <h3 class="risk-title">⚠️ 重要リスク警告</h3>
+                <ul>
+                    <li>本サービスは一般的な市場情報のみを提供し、投資アドバイスや推奨を構成するものではありません。</li>
+                    <li>金融市場にはリスクが存在し、投資元本の一部または全部を失う可能性があります。</li>
+                    <li>表示されている例はすべて過去のデータ分析であり、将来の収益を保証するものではありません。</li>
+                    <li>投資家は自身のリスク許容度に基づいて慎重に判断する必要があります。</li>
+                    <li>すべての情報は客観的事実の記述であり、投資アドバイスを構成するものではありません。</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="privacy.html" target="_blank">プライバシーポリシー</a>
+                <a href="terms.html" target="_blank">利用規約</a>
+            </div>
+            <p>&copy; 2024 プロフェッショナル投資アドバイス. All rights reserved.</p>
+        </div>
+    </footer>
+ 
+    <script>
+        function kay() {
+            // Line連携への遷移処理
+            window.open('https://line.me/', '_blank');
+        }
+
+        // スムーススクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // スクロール時のアニメーション
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.problem-item, .service-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
